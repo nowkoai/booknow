@@ -1,0 +1,484 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>12. マルチスレッドによるファイルのアップロード · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="11.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="0.html">
+            
+                <a href="0.html">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    1. オブジェクトストレージにアクセスしてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    2. バケットを表示してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    3. バケットを新規作成してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    4. ファイル転送してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    5. オブジェクトをリスト表示してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    6. オブジェクトを削除してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    7. バケットを削除してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    8. バケットのバージョニング設定をしてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    9. オブジェクトのメタデータを表示してみる / head_object()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    10. オブジェクト公開のための署名付きURLを生成してみる / generate_presigned_url ()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    11. アップロードの進捗状況表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.14" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    12. マルチスレッドによるファイルのアップロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >12. マルチスレッドによるファイルのアップロード</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x3010;12&#x3011;&#x30DE;&#x30EB;&#x30C1;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x306B;&#x3088;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;">&#x3010;12&#x3011;&#x30DE;&#x30EB;&#x30C1;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x306B;&#x3088;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;</h1>
+<p>&#x4ECA;&#x56DE;&#x306F;&#x3001;Python(boto3) &#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x7DE8;&#x3067;&#x3059;</p>
+<h2 id="&#x30DE;&#x30EB;&#x30C1;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x306B;&#x3088;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;">&#x30DE;&#x30EB;&#x30C1;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x306B;&#x3088;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;</h2>
+<p>&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30C6;&#x3099;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;(&#x3053;&#x306E;&#x30B5;&#x30F3;&#x30D5;&#x309A;&#x30EB;&#x3066;&#x3099;&#x306F; &#x300C;./log&#x300D;)&#x306B;&#x3042;&#x308B;&#x5168;&#x3066;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x3001;Cloudian&#x4E0A;&#x306E;&#x30CF;&#x3099;&#x30B1;&#x30C3;&#x30C8;&#x300C;logs&#x300D;&#x306E;&#x4E2D;&#x306E;&#x5B9F;&#x884C;&#x65E5;&#x306E;&#x30D5;&#x30A9;&#x30EB;&#x30BF;&#x3099; (YYYY-MM-DD)&#x306B;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3059;&#x308B; Python &#x30D5;&#x309A;&#x30ED;&#x30AF;&#x3099;&#x30E9;&#x30E0;&#x3066;&#x3099;&#x3059;&#x3002;</p>
+<p>&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3059;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x6BCE;&#x306B;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x3001;&#x30DE;&#x30EB;&#x30C1;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x3066;&#x3099; Cloudian&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3057;&#x307E;&#x3059;&#x3002;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x6642;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;ACL &#x306B;&#x300C;private&#x300D;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3001;&#x30E1;&#x30BF;&#x30C6;&#x3099;&#x30FC;&#x30BF;&#x3068;&#x3057;&#x3066;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3057;&#x305F;&#x65E5;&#x4ED8;&#x3092;&#x4ED8;&#x4E0E;&#x3057;&#x3001;AES256 &#x306E;&#x30B5;&#x30FC;&#x30CF;&#x3099;&#x30FC;&#x30B5;&#x30A4;&#x30C8;&#x3099;&#x6697;&#x53F7;&#x5316;&#x3092;&#x6709;&#x52B9;&#x306B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-python:MultipartUpload.py">import os
+import glob
+import threading
+import sys
+from datetime import datetime
+
+import boto3, botocore
+from boto3.s3.transfer import S3Transfer
+from boto3.s3.transfer import TransferConfig
+
+
+######### &#x30DE;&#x30EB;&#x30C1;&#x30B9;&#x30EC;&#x30C3;&#x30C9;&#x95A2;&#x6570; ##########
+def multithreads_upload(upfile):
+
+    print(&quot;Thread %s is uploading file: %s&quot; % (threading.current_thread(), upfile))
+
+    transfer.upload_file(
+        upfile,
+       bucket,
+       today + &apos;/&apos; + os.path.basename(upfile),
+
+       extra_args={
+            &apos;ACL&apos;: &apos;private&apos;,
+            &apos;Metadata&apos;: {&apos;Stored&apos;: today},
+            &apos;ServerSideEncryption&apos;: &apos;AES256&apos;
+       }
+    )
+
+    print(&quot;Thread %s done uploading file: %s&quot; % (threading.current_thread(), upfile))
+
+
+
+########## &#x30E1;&#x30A4;&#x30F3;&#x51E6;&#x7406; ##########
+# &#x5909;&#x6570;&#x30BB;&#x30C3;&#x30C8;
+dir = &apos;./fileup/&apos;
+
+bucket = &apos;logs&apos;
+region = &apos;region1&apos;
+today = datetime.now().strftime(&apos;%Y-%m-%d&apos;)
+
+
+# boto3&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x4F5C;&#x6210;
+client = boto3.client(
+    &apos;s3&apos;,
+    endpoint_url=&apos;http://s3-region1.admin-tech.tokyo&apos;,
+
+    # &#x8A8D;&#x8A3C;&#x60C5;&#x5831;&#x306E;&#x76F4;&#x63A5;&#x8A18;&#x8FF0;&#x306F;&#x63A8;&#x5968;&#x3055;&#x308C;&#x306A;&#x3044;&#xFF08;&#x30C6;&#x30B9;&#x30C8;&#x76EE;&#x7684;&#xFF09;
+    aws_access_key_id=&apos;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30AD;&#x30FC;&#x3092;&#x8A18;&#x8FF0;&apos;,
+    aws_secret_access_key=&apos;&#x30B7;&#x30FC;&#x30AF;&#x30EC;&#x30C3;&#x30C8;&#x30AD;&#x30FC;&#x3092;&#x8A18;&#x8FF0;&apos;
+)
+
+# &#x8EE2;&#x9001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x4F5C;&#x6210;
+transfer = S3Transfer(client)
+
+
+
+try:
+    # &#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x306E;&#x5B58;&#x5728;&#x78BA;&#x8A8D;
+    client.head_bucket(Bucket = bucket)
+
+except botocore.exceptions.ClientError:
+    # &#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;&#x65B0;&#x898F;&#x4F5C;&#x6210;
+    client.create_bucket(
+        ACL=&apos;private&apos;,
+        Bucket=bucket,
+        CreateBucketConfiguration={
+            &apos;LocationConstraint&apos;: &apos;region1&apos;
+        }
+)
+
+
+# &#x30DE;&#x30EB;&#x30C1;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x306B;&#x3088;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;
+upfiles = [dir + file for file in os.listdir(dir) if os.path.isfile(dir + file)]
+threads = []
+
+for upfile in upfiles:
+    t = threading.Thread(target=multithreads_upload, args=(upfile,))
+    t.start()
+    threads.append(t)
+
+for t in threads:
+    t.join()
+</code></pre>
+<p>&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x5B9F;&#x884C;&#x306E;&#x51FA;&#x529B;&#x30ED;&#x30B0;&#x304B;&#x3089;&#x3001;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3059;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30B5;&#x30A4;&#x30B9;&#x3099;&#x306B;&#x3088;&#x308A;&#x5404;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x306E;&#x958B;&#x59CB;&#x3068;&#x7D42;&#x4E86;&#x306B;&#x5DEE;&#x304B;&#x3099;&#x3042;&#x308B;&#x3053;&#x3068;&#x304B;&#x3099;&#x5206;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x30B5;&#x30F3;&#x30D5;&#x309A;&#x30EB;&#x3066;&#x3099;&#x306F;&#x5404;&#x30B9;&#x30EC;&#x30C3;&#x30C8;&#x3099;&#x306E;&#x7D42;&#x4E86;&#x3092; threading.join()&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x5168;&#x3066;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x304B;&#x3099;&#x7D42;&#x4E86;&#x3059;&#x308B;&#x306E;&#x3092;&#x5F85;&#x6A5F;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4E0B;&#x56F3;&#x306F;&#x3053;&#x306E;&#x30B5;&#x30F3;&#x30D5;&#x309A;&#x30EB;&#x30D5;&#x309A;&#x30ED;&#x30AF;&#x3099;&#x30E9;&#x30E0;&#x306B;&#x3088;&#x308A;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x3001;CMC &#x304B;&#x3089;&#x78BA;&#x8A8D;&#x3057;&#x305F;&#x753B;&#x9762;&#x3066;&#x3099;&#x3059;</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/962155/4b203bc4-84d1-f531-402c-cdb649d5b938.png" alt="4-2-1.png" title="4-2-1.png"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="11.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 11. アップロードの進捗状況表示">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"12. マルチスレッドによるファイルのアップロード","level":"1.14","depth":1,"previous":{"title":"11. アップロードの進捗状況表示","level":"1.13","depth":1,"path":"docs/11.md","ref":"docs/11.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/12.md","mtime":"2021-02-21T06:42:05.849Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-21T06:46:25.877Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

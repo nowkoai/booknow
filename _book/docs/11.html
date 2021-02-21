@@ -1,0 +1,1306 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>11. アップロードの進捗状況表示 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="12.html" />
+    
+    
+    <link rel="prev" href="10.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="0.html">
+            
+                <a href="0.html">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    1. オブジェクトストレージにアクセスしてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2.html">
+            
+                <a href="2.html">
+            
+                    
+                    2. バケットを表示してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="3.html">
+            
+                <a href="3.html">
+            
+                    
+                    3. バケットを新規作成してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="4.html">
+            
+                <a href="4.html">
+            
+                    
+                    4. ファイル転送してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="5.html">
+            
+                <a href="5.html">
+            
+                    
+                    5. オブジェクトをリスト表示してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="6.html">
+            
+                <a href="6.html">
+            
+                    
+                    6. オブジェクトを削除してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="7.html">
+            
+                <a href="7.html">
+            
+                    
+                    7. バケットを削除してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="8.html">
+            
+                <a href="8.html">
+            
+                    
+                    8. バケットのバージョニング設定をしてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="9.html">
+            
+                <a href="9.html">
+            
+                    
+                    9. オブジェクトのメタデータを表示してみる / head_object()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="10.html">
+            
+                <a href="10.html">
+            
+                    
+                    10. オブジェクト公開のための署名付きURLを生成してみる / generate_presigned_url ()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="11.html">
+            
+                <a href="11.html">
+            
+                    
+                    11. アップロードの進捗状況表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="12.html">
+            
+                <a href="12.html">
+            
+                    
+                    12. マルチスレッドによるファイルのアップロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >11. アップロードの進捗状況表示</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x3010;11&#x3011;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x306E;&#x9032;&#x6357;&#x72B6;&#x6CC1;&#x8868;&#x793A;">&#x3010;11&#x3011;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x306E;&#x9032;&#x6357;&#x72B6;&#x6CC1;&#x8868;&#x793A;</h1>
+<p>&#x4ECA;&#x56DE;&#x306F;&#x3001;Python(boto3) &#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x7DE8;&#x3067;&#x3059;</p>
+<h2 id="&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x306E;&#x9032;&#x6357;&#x72B6;&#x6CC1;&#x8868;&#x793A;">&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x306E;&#x9032;&#x6357;&#x72B6;&#x6CC1;&#x8868;&#x793A;</h2>
+<p>200MB &#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x300C;200mb.dat&#x300D;&#x3092;&#x3001;&#x30AA;&#x30D5;&#x3099;&#x30B7;&#x3099;&#x30A7;&#x30AF;&#x30C8;&#x30B9;&#x30C8;&#x30EC;&#x30FC;&#x30B8;/Cloudian&#x4E0A;&#x306E;&#x30CF;&#x3099;&#x30B1;&#x30C3;&#x30C8;&#x540D;&#x300C;boto3&#x300D;&#x306B;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3059;&#x308B; Python &#x30D5;&#x309A;&#x30ED;&#x30AF;&#x3099;&#x30E9;&#x30E0;&#x3066;&#x3099;&#x3059;&#x3002;</p>
+<p>&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x5148;&#x306E;&#x30CF;&#x3099;&#x30B1;&#x30C3;&#x30C8;&#x540D;&#x300C;boto3&#x300D;&#x304B;&#x3099;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3051;&#x308C;&#x306F;&#x3099;&#x3001;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x524D;&#x306B;&#x30CF;&#x3099;&#x30B1;&#x30C3;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;&#x30DE;&#x30EB;&#x30C1;&#x30CF;&#x309A;&#x30FC;&#x30C8;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x6642;&#x306E;&#x30AA;&#x30D5;&#x309A;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;TransferConfig &#x30AA;&#x30D5;&#x3099;&#x30B7;&#x3099;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066; &#x30AA;&#x30D5;&#x309A;&#x30B7;&#x30E7;&#x30F3;&#x5024;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>S3Transfer &#x306E; upload_file()&#x3066;&#x3099;&#x306F;&#x3001;8MB(multipart_threshold = 8 <em> 1024 </em> 1024)&#x4EE5;&#x4E0A;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3066;&#x3099;&#x3042;&#x308C;&#x306F;&#x3099;&#x30DE;&#x30EB;&#x30C1;&#x30CF;&#x309A;&#x30FC;&#x30C8;&#x3066;&#x3099;&#x306E;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3092;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;&#x30DE;&#x30EB;&#x30C1;&#x30CF;&#x309A;&#x30FC;&#x30C8;&#x306B;&#x5206;&#x5272;&#x3055;&#x308C;&#x308B;&#x30C1;&#x30E3;&#x30F3;&#x30AF;&#x306E;&#x30B5;&#x30A4;&#x30B9;&#x3099;&#x306F;&#x3001;8MB(multipart_chunksize = 8388608)&#x306B;&#x306A;&#x308B;&#x3088;&#x3046;&#x306B;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>upload_file()&#x3066;&#x3099;&#x306F;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x3055;&#x308C;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E; ACL &#x3092;&#x300C;public-read&#x300D;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x3001;&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;&#x30E1;&#x30BF;&#x30C6;&#x3099;&#x30FC;&#x30BF;&#x3092;&#x4ED8;&#x4E0E;&#x3057;&#x3001;AES256 &#x306E;&#x30B5;&#x30FC;&#x30CF;&#x3099;&#x30FC;&#x30B5;&#x30A4;&#x30C8;&#x3099;&#x6697;&#x53F7;&#x5316;&#x3092;&#x6709;&#x52B9;&#x306B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x307E;&#x305F;&#x3001;upload_file() &#x306E;&#x30B3;&#x30FC;&#x30EB;&#x30CF;&#x3099;&#x30C3;&#x30AF;&#x95A2;&#x6570;ProgressPercentage(upfile) &#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x304A;&#x308A;&#x3001;ProgressPercentage&#x95A2;&#x6570;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3001;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x306E;&#x9032;&#x6357;&#x72B6;&#x6CC1;&#x3092;&#x8868;&#x793A;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-python:MultipartUpload.py">import os.path
+import threading
+import sys
+
+import boto3, botocore
+from boto3.s3.transfer import S3Transfer
+from boto3.s3.transfer import TransferConfig
+
+
+######### &#x30B3;&#x30FC;&#x30EB;&#x30CF;&#x3099;&#x30C3;&#x30AF;&#x95A2;&#x6570; ##########
+class ProgressPercentage(object):
+
+    def __init__(self, filename):
+        self._filename = filename
+        self._size = float(os.path.getsize(filename))
+        self._seen_so_far = 0
+        self._lock = threading.Lock()
+
+    def __call__(self, bytes_amount):
+        # To simplify we&apos;ll assume this is hooked up
+        # to a single filename.
+
+        with self._lock:
+            self._seen_so_far += bytes_amount
+            percentage = (self._seen_so_far / self._size) * 100
+            sys.stdout.write(&quot;%s    %s  /   %s  (%.2f%%)\n&quot; % (self._filename, self._seen_so_far, self._size, percentage))
+            sys.stdout.flush()
+
+
+
+########## &#x30E1;&#x30A4;&#x30F3;&#x51E6;&#x7406; ##########
+
+# boto3&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x4F5C;&#x6210;
+client = boto3.client(
+    &apos;s3&apos;,
+    endpoint_url=&apos;http://s3-region1.admin-tech.tokyo&apos;,
+
+    # &#x8A8D;&#x8A3C;&#x60C5;&#x5831;&#x306E;&#x76F4;&#x63A5;&#x8A18;&#x8FF0;&#x306F;&#x63A8;&#x5968;&#x3055;&#x308C;&#x306A;&#x3044;&#xFF08;&#x30C6;&#x30B9;&#x30C8;&#x76EE;&#x7684;&#xFF09;
+    aws_access_key_id=&apos;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30AD;&#x30FC;&#x3092;&#x8A18;&#x8FF0;&apos;,
+    aws_secret_access_key=&apos;&#x30B7;&#x30FC;&#x30AF;&#x30EC;&#x30C3;&#x30C8;&#x30AD;&#x30FC;&#x3092;&#x8A18;&#x8FF0;&apos;
+)
+
+# &#x5909;&#x6570;&#x30BB;&#x30C3;&#x30C8;
+bucket = &apos;boto3&apos;
+upfile = &apos;./fileup/200mb.dat&apos;
+fname, ext = os.path.splitext(os.path.basename(upfile))
+print(fname, ext)
+key = fname + &apos;_mpu&apos; + ext
+
+
+try:
+    # &#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x306E;&#x5B58;&#x5728;&#x78BA;&#x8A8D;
+    client.head_bucket(Bucket = bucket)
+
+except botocore.exceptions.ClientError:
+    # &#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;&#x65B0;&#x898F;&#x4F5C;&#x6210;
+    client.create_bucket(
+        ACL=&apos;private&apos;,
+        Bucket=bucket,
+        CreateBucketConfiguration={
+            &apos;LocationConstraint&apos;: &apos;region1&apos;
+        }
+)
+
+
+# &#x30DE;&#x30EB;&#x30C1;&#x30D1;&#x30FC;&#x30C8;&#x3067;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;
+config = TransferConfig(
+            multipart_threshold = 8 * 1024 * 1024,
+            max_concurrency = 10,
+            multipart_chunksize = 8388608,
+            num_download_attempts = 10,
+            max_io_queue = 100
+        )
+
+transfer = S3Transfer(client, config)
+
+transfer.upload_file(
+    upfile,
+    bucket,
+    key,
+    extra_args={
+        &apos;ACL&apos;: &apos;public-read&apos;,
+        &apos;Metadata&apos;: {
+            &apos;Purpose&apos;: &apos;Upload test&apos;,
+            &apos;Engineer&apos;: &apos;Ryosuke Matsui&apos;,
+            &apos;Company&apos;: &apos;Cloudian K.K.&apos;},
+           &apos;ServerSideEncryption&apos;: &apos;AES256&apos;
+        },
+    callback=ProgressPercentage(upfile)
+)
+</code></pre>
+<pre><code class="lang-bash">200mb .dat
+./fileup/200mb.dat    262144  /   209715200.0  (0.12%)
+./fileup/200mb.dat    524288  /   209715200.0  (0.25%)
+./fileup/200mb.dat    786432  /   209715200.0  (0.38%)
+./fileup/200mb.dat    1048576  /   209715200.0  (0.50%)
+./fileup/200mb.dat    1310720  /   209715200.0  (0.62%)
+./fileup/200mb.dat    1572864  /   209715200.0  (0.75%)
+./fileup/200mb.dat    1835008  /   209715200.0  (0.88%)
+./fileup/200mb.dat    2097152  /   209715200.0  (1.00%)
+./fileup/200mb.dat    2359296  /   209715200.0  (1.12%)
+./fileup/200mb.dat    2621440  /   209715200.0  (1.25%)
+./fileup/200mb.dat    2883584  /   209715200.0  (1.38%)
+./fileup/200mb.dat    3145728  /   209715200.0  (1.50%)
+./fileup/200mb.dat    3407872  /   209715200.0  (1.62%)
+./fileup/200mb.dat    3670016  /   209715200.0  (1.75%)
+./fileup/200mb.dat    3932160  /   209715200.0  (1.88%)
+./fileup/200mb.dat    4194304  /   209715200.0  (2.00%)
+./fileup/200mb.dat    4456448  /   209715200.0  (2.12%)
+./fileup/200mb.dat    4718592  /   209715200.0  (2.25%)
+./fileup/200mb.dat    4980736  /   209715200.0  (2.38%)
+./fileup/200mb.dat    5242880  /   209715200.0  (2.50%)
+./fileup/200mb.dat    5505024  /   209715200.0  (2.62%)
+./fileup/200mb.dat    5767168  /   209715200.0  (2.75%)
+./fileup/200mb.dat    6029312  /   209715200.0  (2.88%)
+./fileup/200mb.dat    6291456  /   209715200.0  (3.00%)
+./fileup/200mb.dat    6553600  /   209715200.0  (3.12%)
+./fileup/200mb.dat    6815744  /   209715200.0  (3.25%)
+./fileup/200mb.dat    7077888  /   209715200.0  (3.38%)
+./fileup/200mb.dat    7340032  /   209715200.0  (3.50%)
+./fileup/200mb.dat    7602176  /   209715200.0  (3.62%)
+./fileup/200mb.dat    7864320  /   209715200.0  (3.75%)
+./fileup/200mb.dat    8126464  /   209715200.0  (3.88%)
+./fileup/200mb.dat    8388608  /   209715200.0  (4.00%)
+./fileup/200mb.dat    8650752  /   209715200.0  (4.12%)
+./fileup/200mb.dat    8912896  /   209715200.0  (4.25%)
+./fileup/200mb.dat    9175040  /   209715200.0  (4.38%)
+./fileup/200mb.dat    9437184  /   209715200.0  (4.50%)
+./fileup/200mb.dat    9699328  /   209715200.0  (4.62%)
+./fileup/200mb.dat    9961472  /   209715200.0  (4.75%)
+./fileup/200mb.dat    10223616  /   209715200.0  (4.88%)
+./fileup/200mb.dat    10485760  /   209715200.0  (5.00%)
+./fileup/200mb.dat    10747904  /   209715200.0  (5.12%)
+./fileup/200mb.dat    11010048  /   209715200.0  (5.25%)
+./fileup/200mb.dat    11272192  /   209715200.0  (5.38%)
+./fileup/200mb.dat    11534336  /   209715200.0  (5.50%)
+./fileup/200mb.dat    11796480  /   209715200.0  (5.62%)
+./fileup/200mb.dat    12058624  /   209715200.0  (5.75%)
+./fileup/200mb.dat    12320768  /   209715200.0  (5.88%)
+./fileup/200mb.dat    12582912  /   209715200.0  (6.00%)
+./fileup/200mb.dat    12845056  /   209715200.0  (6.12%)
+./fileup/200mb.dat    13107200  /   209715200.0  (6.25%)
+./fileup/200mb.dat    13369344  /   209715200.0  (6.38%)
+./fileup/200mb.dat    13631488  /   209715200.0  (6.50%)
+./fileup/200mb.dat    13893632  /   209715200.0  (6.62%)
+./fileup/200mb.dat    14155776  /   209715200.0  (6.75%)
+./fileup/200mb.dat    14417920  /   209715200.0  (6.88%)
+./fileup/200mb.dat    14680064  /   209715200.0  (7.00%)
+./fileup/200mb.dat    14942208  /   209715200.0  (7.12%)
+./fileup/200mb.dat    15204352  /   209715200.0  (7.25%)
+./fileup/200mb.dat    15466496  /   209715200.0  (7.38%)
+./fileup/200mb.dat    15728640  /   209715200.0  (7.50%)
+./fileup/200mb.dat    15990784  /   209715200.0  (7.62%)
+./fileup/200mb.dat    16252928  /   209715200.0  (7.75%)
+./fileup/200mb.dat    16515072  /   209715200.0  (7.88%)
+./fileup/200mb.dat    16777216  /   209715200.0  (8.00%)
+./fileup/200mb.dat    17039360  /   209715200.0  (8.12%)
+./fileup/200mb.dat    17301504  /   209715200.0  (8.25%)
+./fileup/200mb.dat    17563648  /   209715200.0  (8.38%)
+./fileup/200mb.dat    17825792  /   209715200.0  (8.50%)
+./fileup/200mb.dat    18087936  /   209715200.0  (8.62%)
+./fileup/200mb.dat    18350080  /   209715200.0  (8.75%)
+./fileup/200mb.dat    18612224  /   209715200.0  (8.88%)
+./fileup/200mb.dat    18874368  /   209715200.0  (9.00%)
+./fileup/200mb.dat    19136512  /   209715200.0  (9.12%)
+./fileup/200mb.dat    19398656  /   209715200.0  (9.25%)
+./fileup/200mb.dat    19660800  /   209715200.0  (9.38%)
+./fileup/200mb.dat    19922944  /   209715200.0  (9.50%)
+./fileup/200mb.dat    20185088  /   209715200.0  (9.62%)
+./fileup/200mb.dat    20447232  /   209715200.0  (9.75%)
+./fileup/200mb.dat    20709376  /   209715200.0  (9.88%)
+./fileup/200mb.dat    20971520  /   209715200.0  (10.00%)
+./fileup/200mb.dat    21233664  /   209715200.0  (10.12%)
+./fileup/200mb.dat    21495808  /   209715200.0  (10.25%)
+./fileup/200mb.dat    21757952  /   209715200.0  (10.38%)
+./fileup/200mb.dat    22020096  /   209715200.0  (10.50%)
+./fileup/200mb.dat    22282240  /   209715200.0  (10.62%)
+./fileup/200mb.dat    22544384  /   209715200.0  (10.75%)
+./fileup/200mb.dat    22806528  /   209715200.0  (10.88%)
+./fileup/200mb.dat    23068672  /   209715200.0  (11.00%)
+./fileup/200mb.dat    23330816  /   209715200.0  (11.12%)
+./fileup/200mb.dat    23592960  /   209715200.0  (11.25%)
+./fileup/200mb.dat    23855104  /   209715200.0  (11.38%)
+./fileup/200mb.dat    24117248  /   209715200.0  (11.50%)
+./fileup/200mb.dat    24379392  /   209715200.0  (11.62%)
+./fileup/200mb.dat    24641536  /   209715200.0  (11.75%)
+./fileup/200mb.dat    24903680  /   209715200.0  (11.88%)
+./fileup/200mb.dat    25165824  /   209715200.0  (12.00%)
+./fileup/200mb.dat    25427968  /   209715200.0  (12.12%)
+./fileup/200mb.dat    25690112  /   209715200.0  (12.25%)
+./fileup/200mb.dat    25952256  /   209715200.0  (12.38%)
+./fileup/200mb.dat    26214400  /   209715200.0  (12.50%)
+./fileup/200mb.dat    26476544  /   209715200.0  (12.62%)
+./fileup/200mb.dat    26738688  /   209715200.0  (12.75%)
+./fileup/200mb.dat    27000832  /   209715200.0  (12.88%)
+./fileup/200mb.dat    27262976  /   209715200.0  (13.00%)
+./fileup/200mb.dat    27525120  /   209715200.0  (13.12%)
+./fileup/200mb.dat    27787264  /   209715200.0  (13.25%)
+./fileup/200mb.dat    28049408  /   209715200.0  (13.38%)
+./fileup/200mb.dat    28311552  /   209715200.0  (13.50%)
+./fileup/200mb.dat    28573696  /   209715200.0  (13.63%)
+./fileup/200mb.dat    28835840  /   209715200.0  (13.75%)
+./fileup/200mb.dat    29097984  /   209715200.0  (13.88%)
+./fileup/200mb.dat    29360128  /   209715200.0  (14.00%)
+./fileup/200mb.dat    29622272  /   209715200.0  (14.12%)
+./fileup/200mb.dat    29884416  /   209715200.0  (14.25%)
+./fileup/200mb.dat    30146560  /   209715200.0  (14.37%)
+./fileup/200mb.dat    30408704  /   209715200.0  (14.50%)
+./fileup/200mb.dat    30670848  /   209715200.0  (14.62%)
+./fileup/200mb.dat    30932992  /   209715200.0  (14.75%)
+./fileup/200mb.dat    31195136  /   209715200.0  (14.88%)
+./fileup/200mb.dat    31457280  /   209715200.0  (15.00%)
+./fileup/200mb.dat    31719424  /   209715200.0  (15.12%)
+./fileup/200mb.dat    31981568  /   209715200.0  (15.25%)
+./fileup/200mb.dat    32243712  /   209715200.0  (15.38%)
+./fileup/200mb.dat    32505856  /   209715200.0  (15.50%)
+./fileup/200mb.dat    32768000  /   209715200.0  (15.62%)
+./fileup/200mb.dat    33030144  /   209715200.0  (15.75%)
+./fileup/200mb.dat    33292288  /   209715200.0  (15.88%)
+./fileup/200mb.dat    33554432  /   209715200.0  (16.00%)
+./fileup/200mb.dat    33816576  /   209715200.0  (16.12%)
+./fileup/200mb.dat    34078720  /   209715200.0  (16.25%)
+./fileup/200mb.dat    34340864  /   209715200.0  (16.38%)
+./fileup/200mb.dat    34603008  /   209715200.0  (16.50%)
+./fileup/200mb.dat    34865152  /   209715200.0  (16.62%)
+./fileup/200mb.dat    35127296  /   209715200.0  (16.75%)
+./fileup/200mb.dat    35389440  /   209715200.0  (16.88%)
+./fileup/200mb.dat    35651584  /   209715200.0  (17.00%)
+./fileup/200mb.dat    35913728  /   209715200.0  (17.12%)
+./fileup/200mb.dat    36175872  /   209715200.0  (17.25%)
+./fileup/200mb.dat    36438016  /   209715200.0  (17.38%)
+./fileup/200mb.dat    36700160  /   209715200.0  (17.50%)
+./fileup/200mb.dat    36962304  /   209715200.0  (17.62%)
+./fileup/200mb.dat    37224448  /   209715200.0  (17.75%)
+./fileup/200mb.dat    37486592  /   209715200.0  (17.88%)
+./fileup/200mb.dat    37748736  /   209715200.0  (18.00%)
+./fileup/200mb.dat    38010880  /   209715200.0  (18.12%)
+./fileup/200mb.dat    38273024  /   209715200.0  (18.25%)
+./fileup/200mb.dat    38535168  /   209715200.0  (18.38%)
+./fileup/200mb.dat    38797312  /   209715200.0  (18.50%)
+./fileup/200mb.dat    39059456  /   209715200.0  (18.62%)
+./fileup/200mb.dat    39321600  /   209715200.0  (18.75%)
+./fileup/200mb.dat    39583744  /   209715200.0  (18.88%)
+./fileup/200mb.dat    39845888  /   209715200.0  (19.00%)
+./fileup/200mb.dat    40108032  /   209715200.0  (19.12%)
+./fileup/200mb.dat    40370176  /   209715200.0  (19.25%)
+./fileup/200mb.dat    40632320  /   209715200.0  (19.38%)
+./fileup/200mb.dat    40894464  /   209715200.0  (19.50%)
+./fileup/200mb.dat    41156608  /   209715200.0  (19.62%)
+./fileup/200mb.dat    41418752  /   209715200.0  (19.75%)
+./fileup/200mb.dat    41680896  /   209715200.0  (19.88%)
+./fileup/200mb.dat    41943040  /   209715200.0  (20.00%)
+./fileup/200mb.dat    42205184  /   209715200.0  (20.12%)
+./fileup/200mb.dat    42467328  /   209715200.0  (20.25%)
+./fileup/200mb.dat    42729472  /   209715200.0  (20.38%)
+./fileup/200mb.dat    42991616  /   209715200.0  (20.50%)
+./fileup/200mb.dat    43253760  /   209715200.0  (20.62%)
+./fileup/200mb.dat    43515904  /   209715200.0  (20.75%)
+./fileup/200mb.dat    43778048  /   209715200.0  (20.88%)
+./fileup/200mb.dat    44040192  /   209715200.0  (21.00%)
+./fileup/200mb.dat    44302336  /   209715200.0  (21.12%)
+./fileup/200mb.dat    44564480  /   209715200.0  (21.25%)
+./fileup/200mb.dat    44826624  /   209715200.0  (21.38%)
+./fileup/200mb.dat    45088768  /   209715200.0  (21.50%)
+./fileup/200mb.dat    45350912  /   209715200.0  (21.62%)
+./fileup/200mb.dat    45613056  /   209715200.0  (21.75%)
+./fileup/200mb.dat    45875200  /   209715200.0  (21.88%)
+./fileup/200mb.dat    46137344  /   209715200.0  (22.00%)
+./fileup/200mb.dat    46399488  /   209715200.0  (22.12%)
+./fileup/200mb.dat    46661632  /   209715200.0  (22.25%)
+./fileup/200mb.dat    46923776  /   209715200.0  (22.38%)
+./fileup/200mb.dat    47185920  /   209715200.0  (22.50%)
+./fileup/200mb.dat    47448064  /   209715200.0  (22.62%)
+./fileup/200mb.dat    47710208  /   209715200.0  (22.75%)
+./fileup/200mb.dat    47972352  /   209715200.0  (22.88%)
+./fileup/200mb.dat    48234496  /   209715200.0  (23.00%)
+./fileup/200mb.dat    48496640  /   209715200.0  (23.12%)
+./fileup/200mb.dat    48758784  /   209715200.0  (23.25%)
+./fileup/200mb.dat    49020928  /   209715200.0  (23.38%)
+./fileup/200mb.dat    49283072  /   209715200.0  (23.50%)
+./fileup/200mb.dat    49545216  /   209715200.0  (23.62%)
+./fileup/200mb.dat    49807360  /   209715200.0  (23.75%)
+./fileup/200mb.dat    50069504  /   209715200.0  (23.88%)
+./fileup/200mb.dat    50331648  /   209715200.0  (24.00%)
+./fileup/200mb.dat    50593792  /   209715200.0  (24.12%)
+./fileup/200mb.dat    50855936  /   209715200.0  (24.25%)
+./fileup/200mb.dat    51118080  /   209715200.0  (24.38%)
+./fileup/200mb.dat    51380224  /   209715200.0  (24.50%)
+./fileup/200mb.dat    51642368  /   209715200.0  (24.62%)
+./fileup/200mb.dat    51904512  /   209715200.0  (24.75%)
+./fileup/200mb.dat    52166656  /   209715200.0  (24.88%)
+./fileup/200mb.dat    52428800  /   209715200.0  (25.00%)
+./fileup/200mb.dat    52690944  /   209715200.0  (25.12%)
+./fileup/200mb.dat    52953088  /   209715200.0  (25.25%)
+./fileup/200mb.dat    53215232  /   209715200.0  (25.37%)
+./fileup/200mb.dat    53477376  /   209715200.0  (25.50%)
+./fileup/200mb.dat    53739520  /   209715200.0  (25.62%)
+./fileup/200mb.dat    54001664  /   209715200.0  (25.75%)
+./fileup/200mb.dat    54263808  /   209715200.0  (25.87%)
+./fileup/200mb.dat    54525952  /   209715200.0  (26.00%)
+./fileup/200mb.dat    54788096  /   209715200.0  (26.12%)
+./fileup/200mb.dat    55050240  /   209715200.0  (26.25%)
+./fileup/200mb.dat    55312384  /   209715200.0  (26.38%)
+./fileup/200mb.dat    55574528  /   209715200.0  (26.50%)
+./fileup/200mb.dat    55836672  /   209715200.0  (26.62%)
+./fileup/200mb.dat    56098816  /   209715200.0  (26.75%)
+./fileup/200mb.dat    56360960  /   209715200.0  (26.88%)
+./fileup/200mb.dat    56623104  /   209715200.0  (27.00%)
+./fileup/200mb.dat    56885248  /   209715200.0  (27.12%)
+./fileup/200mb.dat    57147392  /   209715200.0  (27.25%)
+./fileup/200mb.dat    57409536  /   209715200.0  (27.38%)
+./fileup/200mb.dat    57671680  /   209715200.0  (27.50%)
+./fileup/200mb.dat    57933824  /   209715200.0  (27.62%)
+./fileup/200mb.dat    58195968  /   209715200.0  (27.75%)
+./fileup/200mb.dat    58458112  /   209715200.0  (27.88%)
+./fileup/200mb.dat    58720256  /   209715200.0  (28.00%)
+./fileup/200mb.dat    58982400  /   209715200.0  (28.12%)
+./fileup/200mb.dat    59244544  /   209715200.0  (28.25%)
+./fileup/200mb.dat    59506688  /   209715200.0  (28.38%)
+./fileup/200mb.dat    59768832  /   209715200.0  (28.50%)
+./fileup/200mb.dat    60030976  /   209715200.0  (28.62%)
+./fileup/200mb.dat    60293120  /   209715200.0  (28.75%)
+./fileup/200mb.dat    60555264  /   209715200.0  (28.88%)
+./fileup/200mb.dat    60817408  /   209715200.0  (29.00%)
+./fileup/200mb.dat    61079552  /   209715200.0  (29.12%)
+./fileup/200mb.dat    61341696  /   209715200.0  (29.25%)
+./fileup/200mb.dat    61603840  /   209715200.0  (29.38%)
+./fileup/200mb.dat    61865984  /   209715200.0  (29.50%)
+./fileup/200mb.dat    62128128  /   209715200.0  (29.62%)
+./fileup/200mb.dat    62390272  /   209715200.0  (29.75%)
+./fileup/200mb.dat    62652416  /   209715200.0  (29.88%)
+./fileup/200mb.dat    62914560  /   209715200.0  (30.00%)
+./fileup/200mb.dat    63176704  /   209715200.0  (30.12%)
+./fileup/200mb.dat    63438848  /   209715200.0  (30.25%)
+./fileup/200mb.dat    63700992  /   209715200.0  (30.38%)
+./fileup/200mb.dat    63963136  /   209715200.0  (30.50%)
+./fileup/200mb.dat    64225280  /   209715200.0  (30.63%)
+./fileup/200mb.dat    64487424  /   209715200.0  (30.75%)
+./fileup/200mb.dat    64749568  /   209715200.0  (30.88%)
+./fileup/200mb.dat    65011712  /   209715200.0  (31.00%)
+./fileup/200mb.dat    65273856  /   209715200.0  (31.13%)
+./fileup/200mb.dat    65536000  /   209715200.0  (31.25%)
+./fileup/200mb.dat    65798144  /   209715200.0  (31.37%)
+./fileup/200mb.dat    66060288  /   209715200.0  (31.50%)
+./fileup/200mb.dat    66322432  /   209715200.0  (31.62%)
+./fileup/200mb.dat    66584576  /   209715200.0  (31.75%)
+./fileup/200mb.dat    66846720  /   209715200.0  (31.87%)
+./fileup/200mb.dat    67108864  /   209715200.0  (32.00%)
+./fileup/200mb.dat    67371008  /   209715200.0  (32.12%)
+./fileup/200mb.dat    67633152  /   209715200.0  (32.25%)
+./fileup/200mb.dat    67895296  /   209715200.0  (32.38%)
+./fileup/200mb.dat    68157440  /   209715200.0  (32.50%)
+./fileup/200mb.dat    68419584  /   209715200.0  (32.62%)
+./fileup/200mb.dat    68681728  /   209715200.0  (32.75%)
+./fileup/200mb.dat    68943872  /   209715200.0  (32.88%)
+./fileup/200mb.dat    69206016  /   209715200.0  (33.00%)
+./fileup/200mb.dat    69468160  /   209715200.0  (33.12%)
+./fileup/200mb.dat    69730304  /   209715200.0  (33.25%)
+./fileup/200mb.dat    69992448  /   209715200.0  (33.38%)
+./fileup/200mb.dat    70254592  /   209715200.0  (33.50%)
+./fileup/200mb.dat    70516736  /   209715200.0  (33.62%)
+./fileup/200mb.dat    70778880  /   209715200.0  (33.75%)
+./fileup/200mb.dat    71041024  /   209715200.0  (33.88%)
+./fileup/200mb.dat    71303168  /   209715200.0  (34.00%)
+./fileup/200mb.dat    71565312  /   209715200.0  (34.12%)
+./fileup/200mb.dat    71827456  /   209715200.0  (34.25%)
+./fileup/200mb.dat    72089600  /   209715200.0  (34.38%)
+./fileup/200mb.dat    72351744  /   209715200.0  (34.50%)
+./fileup/200mb.dat    72613888  /   209715200.0  (34.62%)
+./fileup/200mb.dat    72876032  /   209715200.0  (34.75%)
+./fileup/200mb.dat    73138176  /   209715200.0  (34.88%)
+./fileup/200mb.dat    73400320  /   209715200.0  (35.00%)
+./fileup/200mb.dat    73662464  /   209715200.0  (35.12%)
+./fileup/200mb.dat    73924608  /   209715200.0  (35.25%)
+./fileup/200mb.dat    74186752  /   209715200.0  (35.38%)
+./fileup/200mb.dat    74448896  /   209715200.0  (35.50%)
+./fileup/200mb.dat    74711040  /   209715200.0  (35.62%)
+./fileup/200mb.dat    74973184  /   209715200.0  (35.75%)
+./fileup/200mb.dat    75235328  /   209715200.0  (35.88%)
+./fileup/200mb.dat    75497472  /   209715200.0  (36.00%)
+./fileup/200mb.dat    75759616  /   209715200.0  (36.12%)
+./fileup/200mb.dat    76021760  /   209715200.0  (36.25%)
+./fileup/200mb.dat    76283904  /   209715200.0  (36.38%)
+./fileup/200mb.dat    76546048  /   209715200.0  (36.50%)
+./fileup/200mb.dat    76808192  /   209715200.0  (36.62%)
+./fileup/200mb.dat    77070336  /   209715200.0  (36.75%)
+./fileup/200mb.dat    77332480  /   209715200.0  (36.88%)
+./fileup/200mb.dat    77594624  /   209715200.0  (37.00%)
+./fileup/200mb.dat    77856768  /   209715200.0  (37.12%)
+./fileup/200mb.dat    78118912  /   209715200.0  (37.25%)
+./fileup/200mb.dat    78381056  /   209715200.0  (37.38%)
+./fileup/200mb.dat    78643200  /   209715200.0  (37.50%)
+./fileup/200mb.dat    78905344  /   209715200.0  (37.62%)
+./fileup/200mb.dat    79167488  /   209715200.0  (37.75%)
+./fileup/200mb.dat    79429632  /   209715200.0  (37.88%)
+./fileup/200mb.dat    79691776  /   209715200.0  (38.00%)
+./fileup/200mb.dat    79953920  /   209715200.0  (38.12%)
+./fileup/200mb.dat    80216064  /   209715200.0  (38.25%)
+./fileup/200mb.dat    80478208  /   209715200.0  (38.38%)
+./fileup/200mb.dat    80740352  /   209715200.0  (38.50%)
+./fileup/200mb.dat    81002496  /   209715200.0  (38.62%)
+./fileup/200mb.dat    81264640  /   209715200.0  (38.75%)
+./fileup/200mb.dat    81526784  /   209715200.0  (38.88%)
+./fileup/200mb.dat    81788928  /   209715200.0  (39.00%)
+./fileup/200mb.dat    82051072  /   209715200.0  (39.12%)
+./fileup/200mb.dat    82313216  /   209715200.0  (39.25%)
+./fileup/200mb.dat    82575360  /   209715200.0  (39.38%)
+./fileup/200mb.dat    82837504  /   209715200.0  (39.50%)
+./fileup/200mb.dat    83099648  /   209715200.0  (39.62%)
+./fileup/200mb.dat    83361792  /   209715200.0  (39.75%)
+./fileup/200mb.dat    83623936  /   209715200.0  (39.88%)
+./fileup/200mb.dat    83886080  /   209715200.0  (40.00%)
+./fileup/200mb.dat    84148224  /   209715200.0  (40.12%)
+./fileup/200mb.dat    84410368  /   209715200.0  (40.25%)
+./fileup/200mb.dat    84672512  /   209715200.0  (40.38%)
+./fileup/200mb.dat    84934656  /   209715200.0  (40.50%)
+./fileup/200mb.dat    85196800  /   209715200.0  (40.62%)
+./fileup/200mb.dat    85458944  /   209715200.0  (40.75%)
+./fileup/200mb.dat    85721088  /   209715200.0  (40.88%)
+./fileup/200mb.dat    85983232  /   209715200.0  (41.00%)
+./fileup/200mb.dat    86245376  /   209715200.0  (41.12%)
+./fileup/200mb.dat    86507520  /   209715200.0  (41.25%)
+./fileup/200mb.dat    86769664  /   209715200.0  (41.38%)
+./fileup/200mb.dat    87031808  /   209715200.0  (41.50%)
+./fileup/200mb.dat    87293952  /   209715200.0  (41.62%)
+./fileup/200mb.dat    87556096  /   209715200.0  (41.75%)
+./fileup/200mb.dat    87818240  /   209715200.0  (41.88%)
+./fileup/200mb.dat    88080384  /   209715200.0  (42.00%)
+./fileup/200mb.dat    88342528  /   209715200.0  (42.12%)
+./fileup/200mb.dat    88604672  /   209715200.0  (42.25%)
+./fileup/200mb.dat    88866816  /   209715200.0  (42.38%)
+./fileup/200mb.dat    89128960  /   209715200.0  (42.50%)
+./fileup/200mb.dat    89391104  /   209715200.0  (42.62%)
+./fileup/200mb.dat    89653248  /   209715200.0  (42.75%)
+./fileup/200mb.dat    89915392  /   209715200.0  (42.88%)
+./fileup/200mb.dat    90177536  /   209715200.0  (43.00%)
+./fileup/200mb.dat    90439680  /   209715200.0  (43.12%)
+./fileup/200mb.dat    90701824  /   209715200.0  (43.25%)
+./fileup/200mb.dat    90963968  /   209715200.0  (43.38%)
+./fileup/200mb.dat    91226112  /   209715200.0  (43.50%)
+./fileup/200mb.dat    91488256  /   209715200.0  (43.62%)
+./fileup/200mb.dat    91750400  /   209715200.0  (43.75%)
+./fileup/200mb.dat    92012544  /   209715200.0  (43.88%)
+./fileup/200mb.dat    92274688  /   209715200.0  (44.00%)
+./fileup/200mb.dat    92536832  /   209715200.0  (44.12%)
+./fileup/200mb.dat    92798976  /   209715200.0  (44.25%)
+./fileup/200mb.dat    93061120  /   209715200.0  (44.38%)
+./fileup/200mb.dat    93323264  /   209715200.0  (44.50%)
+./fileup/200mb.dat    93585408  /   209715200.0  (44.62%)
+./fileup/200mb.dat    93847552  /   209715200.0  (44.75%)
+./fileup/200mb.dat    94109696  /   209715200.0  (44.88%)
+./fileup/200mb.dat    94371840  /   209715200.0  (45.00%)
+./fileup/200mb.dat    94633984  /   209715200.0  (45.12%)
+./fileup/200mb.dat    94896128  /   209715200.0  (45.25%)
+./fileup/200mb.dat    95158272  /   209715200.0  (45.38%)
+./fileup/200mb.dat    95420416  /   209715200.0  (45.50%)
+./fileup/200mb.dat    95682560  /   209715200.0  (45.62%)
+./fileup/200mb.dat    95944704  /   209715200.0  (45.75%)
+./fileup/200mb.dat    96206848  /   209715200.0  (45.88%)
+./fileup/200mb.dat    96468992  /   209715200.0  (46.00%)
+./fileup/200mb.dat    96731136  /   209715200.0  (46.12%)
+./fileup/200mb.dat    96993280  /   209715200.0  (46.25%)
+./fileup/200mb.dat    97255424  /   209715200.0  (46.38%)
+./fileup/200mb.dat    97517568  /   209715200.0  (46.50%)
+./fileup/200mb.dat    97779712  /   209715200.0  (46.62%)
+./fileup/200mb.dat    98041856  /   209715200.0  (46.75%)
+./fileup/200mb.dat    98304000  /   209715200.0  (46.88%)
+./fileup/200mb.dat    98566144  /   209715200.0  (47.00%)
+./fileup/200mb.dat    98828288  /   209715200.0  (47.12%)
+./fileup/200mb.dat    99090432  /   209715200.0  (47.25%)
+./fileup/200mb.dat    99352576  /   209715200.0  (47.38%)
+./fileup/200mb.dat    99614720  /   209715200.0  (47.50%)
+./fileup/200mb.dat    99876864  /   209715200.0  (47.62%)
+./fileup/200mb.dat    100139008  /   209715200.0  (47.75%)
+./fileup/200mb.dat    100401152  /   209715200.0  (47.88%)
+./fileup/200mb.dat    100663296  /   209715200.0  (48.00%)
+./fileup/200mb.dat    100925440  /   209715200.0  (48.12%)
+./fileup/200mb.dat    101187584  /   209715200.0  (48.25%)
+./fileup/200mb.dat    101449728  /   209715200.0  (48.38%)
+./fileup/200mb.dat    101711872  /   209715200.0  (48.50%)
+./fileup/200mb.dat    101974016  /   209715200.0  (48.62%)
+./fileup/200mb.dat    102236160  /   209715200.0  (48.75%)
+./fileup/200mb.dat    102498304  /   209715200.0  (48.88%)
+./fileup/200mb.dat    102760448  /   209715200.0  (49.00%)
+./fileup/200mb.dat    103022592  /   209715200.0  (49.12%)
+./fileup/200mb.dat    103284736  /   209715200.0  (49.25%)
+./fileup/200mb.dat    103546880  /   209715200.0  (49.38%)
+./fileup/200mb.dat    103809024  /   209715200.0  (49.50%)
+./fileup/200mb.dat    104071168  /   209715200.0  (49.62%)
+./fileup/200mb.dat    104333312  /   209715200.0  (49.75%)
+./fileup/200mb.dat    104595456  /   209715200.0  (49.88%)
+./fileup/200mb.dat    104857600  /   209715200.0  (50.00%)
+./fileup/200mb.dat    105119744  /   209715200.0  (50.12%)
+./fileup/200mb.dat    105381888  /   209715200.0  (50.25%)
+./fileup/200mb.dat    105644032  /   209715200.0  (50.38%)
+./fileup/200mb.dat    105906176  /   209715200.0  (50.50%)
+./fileup/200mb.dat    106168320  /   209715200.0  (50.62%)
+./fileup/200mb.dat    106430464  /   209715200.0  (50.75%)
+./fileup/200mb.dat    106692608  /   209715200.0  (50.88%)
+./fileup/200mb.dat    106954752  /   209715200.0  (51.00%)
+./fileup/200mb.dat    107216896  /   209715200.0  (51.12%)
+./fileup/200mb.dat    107479040  /   209715200.0  (51.25%)
+./fileup/200mb.dat    107741184  /   209715200.0  (51.38%)
+./fileup/200mb.dat    108003328  /   209715200.0  (51.50%)
+./fileup/200mb.dat    108265472  /   209715200.0  (51.62%)
+./fileup/200mb.dat    108527616  /   209715200.0  (51.75%)
+./fileup/200mb.dat    108789760  /   209715200.0  (51.88%)
+./fileup/200mb.dat    109051904  /   209715200.0  (52.00%)
+./fileup/200mb.dat    109314048  /   209715200.0  (52.12%)
+./fileup/200mb.dat    109576192  /   209715200.0  (52.25%)
+./fileup/200mb.dat    109838336  /   209715200.0  (52.38%)
+./fileup/200mb.dat    110100480  /   209715200.0  (52.50%)
+./fileup/200mb.dat    110362624  /   209715200.0  (52.62%)
+./fileup/200mb.dat    110624768  /   209715200.0  (52.75%)
+./fileup/200mb.dat    110886912  /   209715200.0  (52.88%)
+./fileup/200mb.dat    111149056  /   209715200.0  (53.00%)
+./fileup/200mb.dat    111411200  /   209715200.0  (53.12%)
+./fileup/200mb.dat    111673344  /   209715200.0  (53.25%)
+./fileup/200mb.dat    111935488  /   209715200.0  (53.37%)
+./fileup/200mb.dat    112197632  /   209715200.0  (53.50%)
+./fileup/200mb.dat    112459776  /   209715200.0  (53.62%)
+./fileup/200mb.dat    112721920  /   209715200.0  (53.75%)
+./fileup/200mb.dat    112984064  /   209715200.0  (53.87%)
+./fileup/200mb.dat    113246208  /   209715200.0  (54.00%)
+./fileup/200mb.dat    113508352  /   209715200.0  (54.12%)
+./fileup/200mb.dat    113770496  /   209715200.0  (54.25%)
+./fileup/200mb.dat    114032640  /   209715200.0  (54.37%)
+./fileup/200mb.dat    114294784  /   209715200.0  (54.50%)
+./fileup/200mb.dat    114556928  /   209715200.0  (54.62%)
+./fileup/200mb.dat    114819072  /   209715200.0  (54.75%)
+./fileup/200mb.dat    115081216  /   209715200.0  (54.87%)
+./fileup/200mb.dat    115343360  /   209715200.0  (55.00%)
+./fileup/200mb.dat    115605504  /   209715200.0  (55.12%)
+./fileup/200mb.dat    115867648  /   209715200.0  (55.25%)
+./fileup/200mb.dat    116129792  /   209715200.0  (55.38%)
+./fileup/200mb.dat    116391936  /   209715200.0  (55.50%)
+./fileup/200mb.dat    116654080  /   209715200.0  (55.62%)
+./fileup/200mb.dat    116916224  /   209715200.0  (55.75%)
+./fileup/200mb.dat    117178368  /   209715200.0  (55.88%)
+./fileup/200mb.dat    117440512  /   209715200.0  (56.00%)
+./fileup/200mb.dat    117702656  /   209715200.0  (56.12%)
+./fileup/200mb.dat    117964800  /   209715200.0  (56.25%)
+./fileup/200mb.dat    118226944  /   209715200.0  (56.38%)
+./fileup/200mb.dat    118489088  /   209715200.0  (56.50%)
+./fileup/200mb.dat    118751232  /   209715200.0  (56.62%)
+./fileup/200mb.dat    119013376  /   209715200.0  (56.75%)
+./fileup/200mb.dat    119275520  /   209715200.0  (56.88%)
+./fileup/200mb.dat    119537664  /   209715200.0  (57.00%)
+./fileup/200mb.dat    119799808  /   209715200.0  (57.12%)
+./fileup/200mb.dat    120061952  /   209715200.0  (57.25%)
+./fileup/200mb.dat    120324096  /   209715200.0  (57.38%)
+./fileup/200mb.dat    120586240  /   209715200.0  (57.50%)
+./fileup/200mb.dat    120848384  /   209715200.0  (57.63%)
+./fileup/200mb.dat    121110528  /   209715200.0  (57.75%)
+./fileup/200mb.dat    121372672  /   209715200.0  (57.88%)
+./fileup/200mb.dat    121634816  /   209715200.0  (58.00%)
+./fileup/200mb.dat    121896960  /   209715200.0  (58.13%)
+./fileup/200mb.dat    122159104  /   209715200.0  (58.25%)
+./fileup/200mb.dat    122421248  /   209715200.0  (58.38%)
+./fileup/200mb.dat    122683392  /   209715200.0  (58.50%)
+./fileup/200mb.dat    122945536  /   209715200.0  (58.63%)
+./fileup/200mb.dat    123207680  /   209715200.0  (58.75%)
+./fileup/200mb.dat    123469824  /   209715200.0  (58.88%)
+./fileup/200mb.dat    123731968  /   209715200.0  (59.00%)
+./fileup/200mb.dat    123994112  /   209715200.0  (59.13%)
+./fileup/200mb.dat    124256256  /   209715200.0  (59.25%)
+./fileup/200mb.dat    124518400  /   209715200.0  (59.38%)
+./fileup/200mb.dat    124780544  /   209715200.0  (59.50%)
+./fileup/200mb.dat    125042688  /   209715200.0  (59.62%)
+./fileup/200mb.dat    125304832  /   209715200.0  (59.75%)
+./fileup/200mb.dat    125566976  /   209715200.0  (59.88%)
+./fileup/200mb.dat    125829120  /   209715200.0  (60.00%)
+./fileup/200mb.dat    126091264  /   209715200.0  (60.12%)
+./fileup/200mb.dat    126353408  /   209715200.0  (60.25%)
+./fileup/200mb.dat    126615552  /   209715200.0  (60.38%)
+./fileup/200mb.dat    126877696  /   209715200.0  (60.50%)
+./fileup/200mb.dat    127139840  /   209715200.0  (60.62%)
+./fileup/200mb.dat    127401984  /   209715200.0  (60.75%)
+./fileup/200mb.dat    127664128  /   209715200.0  (60.88%)
+./fileup/200mb.dat    127926272  /   209715200.0  (61.00%)
+./fileup/200mb.dat    128188416  /   209715200.0  (61.12%)
+./fileup/200mb.dat    128450560  /   209715200.0  (61.25%)
+./fileup/200mb.dat    128712704  /   209715200.0  (61.38%)
+./fileup/200mb.dat    128974848  /   209715200.0  (61.50%)
+./fileup/200mb.dat    129236992  /   209715200.0  (61.62%)
+./fileup/200mb.dat    129499136  /   209715200.0  (61.75%)
+./fileup/200mb.dat    129761280  /   209715200.0  (61.88%)
+./fileup/200mb.dat    130023424  /   209715200.0  (62.00%)
+./fileup/200mb.dat    130285568  /   209715200.0  (62.12%)
+./fileup/200mb.dat    130547712  /   209715200.0  (62.25%)
+./fileup/200mb.dat    130809856  /   209715200.0  (62.38%)
+./fileup/200mb.dat    131072000  /   209715200.0  (62.50%)
+./fileup/200mb.dat    131334144  /   209715200.0  (62.62%)
+./fileup/200mb.dat    131596288  /   209715200.0  (62.75%)
+./fileup/200mb.dat    131858432  /   209715200.0  (62.88%)
+./fileup/200mb.dat    132120576  /   209715200.0  (63.00%)
+./fileup/200mb.dat    132382720  /   209715200.0  (63.12%)
+./fileup/200mb.dat    132644864  /   209715200.0  (63.25%)
+./fileup/200mb.dat    132907008  /   209715200.0  (63.38%)
+./fileup/200mb.dat    133169152  /   209715200.0  (63.50%)
+./fileup/200mb.dat    133431296  /   209715200.0  (63.62%)
+./fileup/200mb.dat    133693440  /   209715200.0  (63.75%)
+./fileup/200mb.dat    133955584  /   209715200.0  (63.88%)
+./fileup/200mb.dat    134217728  /   209715200.0  (64.00%)
+./fileup/200mb.dat    134479872  /   209715200.0  (64.12%)
+./fileup/200mb.dat    134742016  /   209715200.0  (64.25%)
+./fileup/200mb.dat    135004160  /   209715200.0  (64.38%)
+./fileup/200mb.dat    135266304  /   209715200.0  (64.50%)
+./fileup/200mb.dat    135528448  /   209715200.0  (64.62%)
+./fileup/200mb.dat    135790592  /   209715200.0  (64.75%)
+./fileup/200mb.dat    136052736  /   209715200.0  (64.88%)
+./fileup/200mb.dat    136314880  /   209715200.0  (65.00%)
+./fileup/200mb.dat    136577024  /   209715200.0  (65.12%)
+./fileup/200mb.dat    136839168  /   209715200.0  (65.25%)
+./fileup/200mb.dat    137101312  /   209715200.0  (65.38%)
+./fileup/200mb.dat    137363456  /   209715200.0  (65.50%)
+./fileup/200mb.dat    137625600  /   209715200.0  (65.62%)
+./fileup/200mb.dat    137887744  /   209715200.0  (65.75%)
+./fileup/200mb.dat    138149888  /   209715200.0  (65.88%)
+./fileup/200mb.dat    138412032  /   209715200.0  (66.00%)
+./fileup/200mb.dat    138674176  /   209715200.0  (66.12%)
+./fileup/200mb.dat    138936320  /   209715200.0  (66.25%)
+./fileup/200mb.dat    139198464  /   209715200.0  (66.38%)
+./fileup/200mb.dat    139460608  /   209715200.0  (66.50%)
+./fileup/200mb.dat    139722752  /   209715200.0  (66.62%)
+./fileup/200mb.dat    139984896  /   209715200.0  (66.75%)
+./fileup/200mb.dat    140247040  /   209715200.0  (66.88%)
+./fileup/200mb.dat    140509184  /   209715200.0  (67.00%)
+./fileup/200mb.dat    140771328  /   209715200.0  (67.12%)
+./fileup/200mb.dat    141033472  /   209715200.0  (67.25%)
+./fileup/200mb.dat    141295616  /   209715200.0  (67.38%)
+./fileup/200mb.dat    141557760  /   209715200.0  (67.50%)
+./fileup/200mb.dat    141819904  /   209715200.0  (67.62%)
+./fileup/200mb.dat    142082048  /   209715200.0  (67.75%)
+./fileup/200mb.dat    142344192  /   209715200.0  (67.88%)
+./fileup/200mb.dat    142606336  /   209715200.0  (68.00%)
+./fileup/200mb.dat    142868480  /   209715200.0  (68.12%)
+./fileup/200mb.dat    143130624  /   209715200.0  (68.25%)
+./fileup/200mb.dat    143392768  /   209715200.0  (68.38%)
+./fileup/200mb.dat    143654912  /   209715200.0  (68.50%)
+./fileup/200mb.dat    143917056  /   209715200.0  (68.62%)
+./fileup/200mb.dat    144179200  /   209715200.0  (68.75%)
+./fileup/200mb.dat    144441344  /   209715200.0  (68.88%)
+./fileup/200mb.dat    144703488  /   209715200.0  (69.00%)
+./fileup/200mb.dat    144965632  /   209715200.0  (69.12%)
+./fileup/200mb.dat    145227776  /   209715200.0  (69.25%)
+./fileup/200mb.dat    145489920  /   209715200.0  (69.38%)
+./fileup/200mb.dat    145752064  /   209715200.0  (69.50%)
+./fileup/200mb.dat    146014208  /   209715200.0  (69.62%)
+./fileup/200mb.dat    146276352  /   209715200.0  (69.75%)
+./fileup/200mb.dat    146538496  /   209715200.0  (69.88%)
+./fileup/200mb.dat    146800640  /   209715200.0  (70.00%)
+./fileup/200mb.dat    147062784  /   209715200.0  (70.12%)
+./fileup/200mb.dat    147324928  /   209715200.0  (70.25%)
+./fileup/200mb.dat    147587072  /   209715200.0  (70.38%)
+./fileup/200mb.dat    147849216  /   209715200.0  (70.50%)
+./fileup/200mb.dat    148111360  /   209715200.0  (70.62%)
+./fileup/200mb.dat    148373504  /   209715200.0  (70.75%)
+./fileup/200mb.dat    148635648  /   209715200.0  (70.88%)
+./fileup/200mb.dat    148897792  /   209715200.0  (71.00%)
+./fileup/200mb.dat    149159936  /   209715200.0  (71.12%)
+./fileup/200mb.dat    149422080  /   209715200.0  (71.25%)
+./fileup/200mb.dat    149684224  /   209715200.0  (71.38%)
+./fileup/200mb.dat    149946368  /   209715200.0  (71.50%)
+./fileup/200mb.dat    150208512  /   209715200.0  (71.62%)
+./fileup/200mb.dat    150470656  /   209715200.0  (71.75%)
+./fileup/200mb.dat    150732800  /   209715200.0  (71.88%)
+./fileup/200mb.dat    150994944  /   209715200.0  (72.00%)
+./fileup/200mb.dat    151257088  /   209715200.0  (72.12%)
+./fileup/200mb.dat    151519232  /   209715200.0  (72.25%)
+./fileup/200mb.dat    151781376  /   209715200.0  (72.38%)
+./fileup/200mb.dat    152043520  /   209715200.0  (72.50%)
+./fileup/200mb.dat    152305664  /   209715200.0  (72.62%)
+./fileup/200mb.dat    152567808  /   209715200.0  (72.75%)
+./fileup/200mb.dat    152829952  /   209715200.0  (72.88%)
+./fileup/200mb.dat    153092096  /   209715200.0  (73.00%)
+./fileup/200mb.dat    153354240  /   209715200.0  (73.12%)
+./fileup/200mb.dat    153616384  /   209715200.0  (73.25%)
+./fileup/200mb.dat    153878528  /   209715200.0  (73.38%)
+./fileup/200mb.dat    154140672  /   209715200.0  (73.50%)
+./fileup/200mb.dat    154402816  /   209715200.0  (73.62%)
+./fileup/200mb.dat    154664960  /   209715200.0  (73.75%)
+./fileup/200mb.dat    154927104  /   209715200.0  (73.88%)
+./fileup/200mb.dat    155189248  /   209715200.0  (74.00%)
+./fileup/200mb.dat    155451392  /   209715200.0  (74.12%)
+./fileup/200mb.dat    155713536  /   209715200.0  (74.25%)
+./fileup/200mb.dat    155975680  /   209715200.0  (74.38%)
+./fileup/200mb.dat    156237824  /   209715200.0  (74.50%)
+./fileup/200mb.dat    156499968  /   209715200.0  (74.62%)
+./fileup/200mb.dat    156762112  /   209715200.0  (74.75%)
+./fileup/200mb.dat    157024256  /   209715200.0  (74.88%)
+./fileup/200mb.dat    157286400  /   209715200.0  (75.00%)
+./fileup/200mb.dat    157548544  /   209715200.0  (75.12%)
+./fileup/200mb.dat    157810688  /   209715200.0  (75.25%)
+./fileup/200mb.dat    158072832  /   209715200.0  (75.38%)
+./fileup/200mb.dat    158334976  /   209715200.0  (75.50%)
+./fileup/200mb.dat    158597120  /   209715200.0  (75.62%)
+./fileup/200mb.dat    158859264  /   209715200.0  (75.75%)
+./fileup/200mb.dat    159121408  /   209715200.0  (75.88%)
+./fileup/200mb.dat    159383552  /   209715200.0  (76.00%)
+./fileup/200mb.dat    159645696  /   209715200.0  (76.12%)
+./fileup/200mb.dat    159907840  /   209715200.0  (76.25%)
+./fileup/200mb.dat    160169984  /   209715200.0  (76.38%)
+./fileup/200mb.dat    160432128  /   209715200.0  (76.50%)
+./fileup/200mb.dat    160694272  /   209715200.0  (76.62%)
+./fileup/200mb.dat    160956416  /   209715200.0  (76.75%)
+./fileup/200mb.dat    161218560  /   209715200.0  (76.88%)
+./fileup/200mb.dat    161480704  /   209715200.0  (77.00%)
+./fileup/200mb.dat    161742848  /   209715200.0  (77.12%)
+./fileup/200mb.dat    162004992  /   209715200.0  (77.25%)
+./fileup/200mb.dat    162267136  /   209715200.0  (77.38%)
+./fileup/200mb.dat    162529280  /   209715200.0  (77.50%)
+./fileup/200mb.dat    162791424  /   209715200.0  (77.62%)
+./fileup/200mb.dat    163053568  /   209715200.0  (77.75%)
+./fileup/200mb.dat    163315712  /   209715200.0  (77.88%)
+./fileup/200mb.dat    163577856  /   209715200.0  (78.00%)
+./fileup/200mb.dat    163840000  /   209715200.0  (78.12%)
+./fileup/200mb.dat    164102144  /   209715200.0  (78.25%)
+./fileup/200mb.dat    164364288  /   209715200.0  (78.38%)
+./fileup/200mb.dat    164626432  /   209715200.0  (78.50%)
+./fileup/200mb.dat    164888576  /   209715200.0  (78.62%)
+./fileup/200mb.dat    165150720  /   209715200.0  (78.75%)
+./fileup/200mb.dat    165412864  /   209715200.0  (78.88%)
+./fileup/200mb.dat    165675008  /   209715200.0  (79.00%)
+./fileup/200mb.dat    165937152  /   209715200.0  (79.12%)
+./fileup/200mb.dat    166199296  /   209715200.0  (79.25%)
+./fileup/200mb.dat    166461440  /   209715200.0  (79.38%)
+./fileup/200mb.dat    166723584  /   209715200.0  (79.50%)
+./fileup/200mb.dat    166985728  /   209715200.0  (79.62%)
+./fileup/200mb.dat    167247872  /   209715200.0  (79.75%)
+./fileup/200mb.dat    167510016  /   209715200.0  (79.88%)
+./fileup/200mb.dat    167772160  /   209715200.0  (80.00%)
+./fileup/200mb.dat    168034304  /   209715200.0  (80.12%)
+./fileup/200mb.dat    168296448  /   209715200.0  (80.25%)
+./fileup/200mb.dat    168558592  /   209715200.0  (80.38%)
+./fileup/200mb.dat    168820736  /   209715200.0  (80.50%)
+./fileup/200mb.dat    169082880  /   209715200.0  (80.62%)
+./fileup/200mb.dat    169345024  /   209715200.0  (80.75%)
+./fileup/200mb.dat    169607168  /   209715200.0  (80.88%)
+./fileup/200mb.dat    169869312  /   209715200.0  (81.00%)
+./fileup/200mb.dat    170131456  /   209715200.0  (81.12%)
+./fileup/200mb.dat    170393600  /   209715200.0  (81.25%)
+./fileup/200mb.dat    170655744  /   209715200.0  (81.38%)
+./fileup/200mb.dat    170917888  /   209715200.0  (81.50%)
+./fileup/200mb.dat    171180032  /   209715200.0  (81.62%)
+./fileup/200mb.dat    171442176  /   209715200.0  (81.75%)
+./fileup/200mb.dat    171704320  /   209715200.0  (81.88%)
+./fileup/200mb.dat    171966464  /   209715200.0  (82.00%)
+./fileup/200mb.dat    172228608  /   209715200.0  (82.12%)
+./fileup/200mb.dat    172490752  /   209715200.0  (82.25%)
+./fileup/200mb.dat    172752896  /   209715200.0  (82.38%)
+./fileup/200mb.dat    173015040  /   209715200.0  (82.50%)
+./fileup/200mb.dat    173277184  /   209715200.0  (82.62%)
+./fileup/200mb.dat    173539328  /   209715200.0  (82.75%)
+./fileup/200mb.dat    173801472  /   209715200.0  (82.88%)
+./fileup/200mb.dat    174063616  /   209715200.0  (83.00%)
+./fileup/200mb.dat    174325760  /   209715200.0  (83.12%)
+./fileup/200mb.dat    174587904  /   209715200.0  (83.25%)
+./fileup/200mb.dat    174850048  /   209715200.0  (83.38%)
+./fileup/200mb.dat    175112192  /   209715200.0  (83.50%)
+./fileup/200mb.dat    175374336  /   209715200.0  (83.62%)
+./fileup/200mb.dat    175636480  /   209715200.0  (83.75%)
+./fileup/200mb.dat    175898624  /   209715200.0  (83.88%)
+./fileup/200mb.dat    176160768  /   209715200.0  (84.00%)
+./fileup/200mb.dat    176422912  /   209715200.0  (84.12%)
+./fileup/200mb.dat    176685056  /   209715200.0  (84.25%)
+./fileup/200mb.dat    176947200  /   209715200.0  (84.38%)
+./fileup/200mb.dat    177209344  /   209715200.0  (84.50%)
+./fileup/200mb.dat    177471488  /   209715200.0  (84.62%)
+./fileup/200mb.dat    177733632  /   209715200.0  (84.75%)
+./fileup/200mb.dat    177995776  /   209715200.0  (84.88%)
+./fileup/200mb.dat    178257920  /   209715200.0  (85.00%)
+./fileup/200mb.dat    178520064  /   209715200.0  (85.12%)
+./fileup/200mb.dat    178782208  /   209715200.0  (85.25%)
+./fileup/200mb.dat    179044352  /   209715200.0  (85.38%)
+./fileup/200mb.dat    179306496  /   209715200.0  (85.50%)
+./fileup/200mb.dat    179568640  /   209715200.0  (85.62%)
+./fileup/200mb.dat    179830784  /   209715200.0  (85.75%)
+./fileup/200mb.dat    180092928  /   209715200.0  (85.88%)
+./fileup/200mb.dat    180355072  /   209715200.0  (86.00%)
+./fileup/200mb.dat    180617216  /   209715200.0  (86.12%)
+./fileup/200mb.dat    180879360  /   209715200.0  (86.25%)
+./fileup/200mb.dat    181141504  /   209715200.0  (86.38%)
+./fileup/200mb.dat    181403648  /   209715200.0  (86.50%)
+./fileup/200mb.dat    181665792  /   209715200.0  (86.62%)
+./fileup/200mb.dat    181927936  /   209715200.0  (86.75%)
+./fileup/200mb.dat    182190080  /   209715200.0  (86.88%)
+./fileup/200mb.dat    182452224  /   209715200.0  (87.00%)
+./fileup/200mb.dat    182714368  /   209715200.0  (87.12%)
+./fileup/200mb.dat    182976512  /   209715200.0  (87.25%)
+./fileup/200mb.dat    183238656  /   209715200.0  (87.38%)
+./fileup/200mb.dat    183500800  /   209715200.0  (87.50%)
+./fileup/200mb.dat    183762944  /   209715200.0  (87.62%)
+./fileup/200mb.dat    184025088  /   209715200.0  (87.75%)
+./fileup/200mb.dat    184287232  /   209715200.0  (87.88%)
+./fileup/200mb.dat    184549376  /   209715200.0  (88.00%)
+./fileup/200mb.dat    184811520  /   209715200.0  (88.12%)
+./fileup/200mb.dat    185073664  /   209715200.0  (88.25%)
+./fileup/200mb.dat    185335808  /   209715200.0  (88.38%)
+./fileup/200mb.dat    185597952  /   209715200.0  (88.50%)
+./fileup/200mb.dat    185860096  /   209715200.0  (88.62%)
+./fileup/200mb.dat    186122240  /   209715200.0  (88.75%)
+./fileup/200mb.dat    186384384  /   209715200.0  (88.88%)
+./fileup/200mb.dat    186646528  /   209715200.0  (89.00%)
+./fileup/200mb.dat    186908672  /   209715200.0  (89.12%)
+./fileup/200mb.dat    187170816  /   209715200.0  (89.25%)
+./fileup/200mb.dat    187432960  /   209715200.0  (89.38%)
+./fileup/200mb.dat    187695104  /   209715200.0  (89.50%)
+./fileup/200mb.dat    187957248  /   209715200.0  (89.62%)
+./fileup/200mb.dat    188219392  /   209715200.0  (89.75%)
+./fileup/200mb.dat    188481536  /   209715200.0  (89.88%)
+./fileup/200mb.dat    188743680  /   209715200.0  (90.00%)
+./fileup/200mb.dat    189005824  /   209715200.0  (90.12%)
+./fileup/200mb.dat    189267968  /   209715200.0  (90.25%)
+./fileup/200mb.dat    189530112  /   209715200.0  (90.38%)
+./fileup/200mb.dat    189792256  /   209715200.0  (90.50%)
+./fileup/200mb.dat    190054400  /   209715200.0  (90.62%)
+./fileup/200mb.dat    190316544  /   209715200.0  (90.75%)
+./fileup/200mb.dat    190578688  /   209715200.0  (90.88%)
+./fileup/200mb.dat    190840832  /   209715200.0  (91.00%)
+./fileup/200mb.dat    191102976  /   209715200.0  (91.12%)
+./fileup/200mb.dat    191365120  /   209715200.0  (91.25%)
+./fileup/200mb.dat    191627264  /   209715200.0  (91.38%)
+./fileup/200mb.dat    191889408  /   209715200.0  (91.50%)
+./fileup/200mb.dat    192151552  /   209715200.0  (91.62%)
+./fileup/200mb.dat    192413696  /   209715200.0  (91.75%)
+./fileup/200mb.dat    192675840  /   209715200.0  (91.88%)
+./fileup/200mb.dat    192937984  /   209715200.0  (92.00%)
+./fileup/200mb.dat    193200128  /   209715200.0  (92.12%)
+./fileup/200mb.dat    193462272  /   209715200.0  (92.25%)
+./fileup/200mb.dat    193724416  /   209715200.0  (92.38%)
+./fileup/200mb.dat    193986560  /   209715200.0  (92.50%)
+./fileup/200mb.dat    194248704  /   209715200.0  (92.62%)
+./fileup/200mb.dat    194510848  /   209715200.0  (92.75%)
+./fileup/200mb.dat    194772992  /   209715200.0  (92.88%)
+./fileup/200mb.dat    195035136  /   209715200.0  (93.00%)
+./fileup/200mb.dat    195297280  /   209715200.0  (93.12%)
+./fileup/200mb.dat    195559424  /   209715200.0  (93.25%)
+./fileup/200mb.dat    195821568  /   209715200.0  (93.38%)
+./fileup/200mb.dat    196083712  /   209715200.0  (93.50%)
+./fileup/200mb.dat    196345856  /   209715200.0  (93.62%)
+./fileup/200mb.dat    196608000  /   209715200.0  (93.75%)
+./fileup/200mb.dat    196870144  /   209715200.0  (93.88%)
+./fileup/200mb.dat    197132288  /   209715200.0  (94.00%)
+./fileup/200mb.dat    197394432  /   209715200.0  (94.12%)
+./fileup/200mb.dat    197656576  /   209715200.0  (94.25%)
+./fileup/200mb.dat    197918720  /   209715200.0  (94.38%)
+./fileup/200mb.dat    198180864  /   209715200.0  (94.50%)
+./fileup/200mb.dat    198443008  /   209715200.0  (94.62%)
+./fileup/200mb.dat    198705152  /   209715200.0  (94.75%)
+./fileup/200mb.dat    198967296  /   209715200.0  (94.88%)
+./fileup/200mb.dat    199229440  /   209715200.0  (95.00%)
+./fileup/200mb.dat    199491584  /   209715200.0  (95.12%)
+./fileup/200mb.dat    199753728  /   209715200.0  (95.25%)
+./fileup/200mb.dat    200015872  /   209715200.0  (95.38%)
+./fileup/200mb.dat    200278016  /   209715200.0  (95.50%)
+./fileup/200mb.dat    200540160  /   209715200.0  (95.62%)
+./fileup/200mb.dat    200802304  /   209715200.0  (95.75%)
+./fileup/200mb.dat    201064448  /   209715200.0  (95.88%)
+./fileup/200mb.dat    201326592  /   209715200.0  (96.00%)
+./fileup/200mb.dat    201588736  /   209715200.0  (96.12%)
+./fileup/200mb.dat    201850880  /   209715200.0  (96.25%)
+./fileup/200mb.dat    202113024  /   209715200.0  (96.38%)
+./fileup/200mb.dat    202375168  /   209715200.0  (96.50%)
+./fileup/200mb.dat    202637312  /   209715200.0  (96.62%)
+./fileup/200mb.dat    202899456  /   209715200.0  (96.75%)
+./fileup/200mb.dat    203161600  /   209715200.0  (96.88%)
+./fileup/200mb.dat    203423744  /   209715200.0  (97.00%)
+./fileup/200mb.dat    203685888  /   209715200.0  (97.12%)
+./fileup/200mb.dat    203948032  /   209715200.0  (97.25%)
+./fileup/200mb.dat    204210176  /   209715200.0  (97.38%)
+./fileup/200mb.dat    204472320  /   209715200.0  (97.50%)
+./fileup/200mb.dat    204734464  /   209715200.0  (97.62%)
+./fileup/200mb.dat    204996608  /   209715200.0  (97.75%)
+./fileup/200mb.dat    205258752  /   209715200.0  (97.88%)
+./fileup/200mb.dat    205520896  /   209715200.0  (98.00%)
+./fileup/200mb.dat    205783040  /   209715200.0  (98.12%)
+./fileup/200mb.dat    206045184  /   209715200.0  (98.25%)
+./fileup/200mb.dat    206307328  /   209715200.0  (98.38%)
+./fileup/200mb.dat    206569472  /   209715200.0  (98.50%)
+./fileup/200mb.dat    206831616  /   209715200.0  (98.62%)
+./fileup/200mb.dat    207093760  /   209715200.0  (98.75%)
+./fileup/200mb.dat    207355904  /   209715200.0  (98.88%)
+./fileup/200mb.dat    207618048  /   209715200.0  (99.00%)
+./fileup/200mb.dat    207880192  /   209715200.0  (99.12%)
+./fileup/200mb.dat    208142336  /   209715200.0  (99.25%)
+./fileup/200mb.dat    208404480  /   209715200.0  (99.38%)
+./fileup/200mb.dat    208666624  /   209715200.0  (99.50%)
+./fileup/200mb.dat    208928768  /   209715200.0  (99.62%)
+./fileup/200mb.dat    209190912  /   209715200.0  (99.75%)
+./fileup/200mb.dat    209453056  /   209715200.0  (99.88%)
+./fileup/200mb.dat    209715200  /   209715200.0  (100.00%)
+</code></pre>
+<p>CMC &#x4E0A;&#x3066;&#x3099;&#x306F;&#x3001;&#x30DE;&#x30EB;&#x30C1;&#x30CF;&#x309A;&#x30FC;&#x30C8;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x4E2D;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304B;&#x3099;&#x5B58;&#x5728;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x306F;&#x3001;&#x4E0B;&#x56F3;&#x306E;&#x3088;&#x3046;&#x306B;&#x300C;&#x30DE;&#x30EB;&#x30C1;&#x30CF;&#x309A;&#x30FC;&#x30C8;&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x5B9F;&#x884C;&#x4E2D;&#x300D;&#x304B;&#x3099;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/962155/7d74afa1-33cb-e9d4-fa44-553b2f5ad82d.png" alt="4-1-1.png" title="4-1-1.png"></p>
+<p>&#x30A2;&#x30C3;&#x30D5;&#x309A;&#x30ED;&#x30FC;&#x30C8;&#x3099;&#x6642;&#x306B; AES256 &#x306E;&#x30B5;&#x30FC;&#x30CF;&#x3099;&#x30FC;&#x30B5;&#x30A4;&#x30C8;&#x3099;&#x6697;&#x53F7;&#x5316;&#x3092;&#x6709;&#x52B9;&#x306B;&#x3057;&#x305F;&#x306E;&#x3066;&#x3099;&#x3001;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x306E;&#x5148;&#x982D;&#x306B; &#x1F512;&#x304B;&#x3099;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/962155/315e8f56-2983-6073-d36c-7ea9cf60ca84.png" alt="4-1-2.png" title="4-1-2.png"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="10.html" class="navigation navigation-prev " aria-label="Previous page: 10. オブジェクト公開のための署名付きURLを生成してみる / generate_presigned_url ()">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="12.html" class="navigation navigation-next " aria-label="Next page: 12. マルチスレッドによるファイルのアップロード">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"11. アップロードの進捗状況表示","level":"1.13","depth":1,"next":{"title":"12. マルチスレッドによるファイルのアップロード","level":"1.14","depth":1,"path":"docs/12.md","ref":"docs/12.md","articles":[]},"previous":{"title":"10. オブジェクト公開のための署名付きURLを生成してみる / generate_presigned_url ()","level":"1.12","depth":1,"path":"docs/10.md","ref":"docs/10.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"ja","gitbook":"*"},"file":{"path":"docs/11.md","mtime":"2021-02-21T06:42:02.683Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-21T07:34:43.715Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
